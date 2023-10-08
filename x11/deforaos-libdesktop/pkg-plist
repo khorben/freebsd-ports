@@ -7,6 +7,7 @@ include/Desktop/help.h
 include/Desktop/menubar.h
 include/Desktop/message.h
 include/Desktop/mime.h
+include/Desktop/mimehandler.h
 include/Desktop/toolbar.h
 include/Desktop/widget.h
 lib/libDesktop.a
