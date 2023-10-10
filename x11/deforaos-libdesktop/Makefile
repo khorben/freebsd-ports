@@ -1,6 +1,6 @@
 PORTNAME=	libdesktop
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/4447/
 PKGNAMEPREFIX=	deforaos-
