@@ -12,8 +12,12 @@ WWW=		http://xdialog.free.fr/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
+
 USES=		gnome localbase pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
 
