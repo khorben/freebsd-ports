@@ -1,6 +1,6 @@
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
@@ -35,6 +35,11 @@ post-patch:
 		 s| install-docDATA||g'
 	@${REINPLACE_CMD} -e 's,Xdialog\\-%%version%%,xdialog,' \
 		${WRKSRC}/doc/Xdialog.man
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}${DESKTOPDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
+	${INSTALL_DATA} ${PATCHDIR}/bsdconfig.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${PATCHDIR}/bsdconfig-48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/bsdconfig.png
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/samples
