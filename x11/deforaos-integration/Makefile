@@ -1,8 +1,8 @@
-PORTNAME=	deforaos-integration
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTNAME=	integration
+PORTVERSION=	0.1.3
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Integration/
+PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Integration-${PORTVERSION}
 
 MAINTAINER=	khorben@defora.org
@@ -21,10 +21,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Locker.h:x11/deforaos-locker \
 				${LOCALBASE}/include/Desktop/Phone.h:comms/deforaos-phone
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop \
+		libNotes.so.0:deskutils/deforaos-notes \
 		libpurple.so:net-im/libpurple \
 		libsofia-sip-ua.so:net/sofia-sip \
 		libpulse.so:audio/pulseaudio \
 		libPanel.so.0:x11-wm/deforaos-panel \
+		libTodo.so.0:deskutils/deforaos-todo \
 		libharfbuzz.so:print/harfbuzz \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus
@@ -39,6 +41,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Phone/modem/*.so \
 	${STAGEDIR}${PREFIX}/lib/Phone/plugins/*.so \
 	${STAGEDIR}${PREFIX}/lib/Locker/plugins/*.so \
+	${STAGEDIR}${PREFIX}/lib/Mailer/plugins/*.so \
 	${STAGEDIR}${PREFIX}/lib/Panel/applets/*.so
 
 .include <bsd.port.mk>
