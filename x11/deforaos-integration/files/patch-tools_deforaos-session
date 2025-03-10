@@ -1,0 +1,11 @@
+--- tools/deforaos-session.orig	2025-03-10 03:40:36 UTC
++++ tools/deforaos-session
+@@ -35,7 +35,7 @@ DEBUG=
+ #executables
+ CAT="cat"
+ DEBUG=
+-DESKTOP="desktop"
++DESKTOP="deforaos-desktop"
+ LOCKER="locker"
+ MKDIR="mkdir -p"
+ PANEL="panel"
